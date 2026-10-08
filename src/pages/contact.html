@@ -1,0 +1,47 @@
+<!--
+title: Get a Quote | Umi Cleaning, Portland OR
+description: Request a home cleaning quote from Umi Cleaning in Portland, Oregon. Send a few details and we'll follow up with an estimate, or book online and see your price instantly.
+-->
+<main id="main" class="page page--contact">
+  <div class="contact-intro">
+    <span class="eyebrow">Contact</span>
+    <h1 class="page-title">Get a quote</h1>
+    <p class="lead">Not ready to book? Send a few details and we'll follow up with an estimate. Ready now? <a href="/book">Book online</a> and see your price instantly.</p>
+    <div class="contact-details">
+      <strong>Umi Cleaning</strong>
+      <span>Portland, Oregon service area</span>
+      <span>Bonded &amp; insured · Cancel anytime</span>
+    </div>
+  </div>
+  <!-- Netlify Forms. Submissions appear in the Netlify dashboard (Forms → quote);
+       set up an email notification to hello@umicleaning.com there. -->
+  <form class="form-card" name="quote" method="POST" data-netlify="true" netlify-honeypot="company" data-quote-form>
+    <input type="hidden" name="form-name" value="quote">
+    <p class="visually-hidden" aria-hidden="true">
+      <label>Leave this empty: <input name="company" tabindex="-1" autocomplete="off"></label>
+    </p>
+    <div class="form-success" role="status" hidden data-form-success>Thanks — request received. We'll be in touch shortly.</div>
+    <div class="form-error" role="alert" hidden data-form-error>Sorry, something went wrong. Please try again, or call or text (503) 479-4668.</div>
+    <div class="form-row">
+      <label class="field"><span>Name *</span><input name="name" autocomplete="name" required></label>
+      <label class="field"><span>Phone *</span><input name="phone" type="tel" autocomplete="tel" required></label>
+    </div>
+    <label class="field"><span>Email *</span><input name="email" type="email" autocomplete="email" required></label>
+    <div class="form-row form-row--address">
+      <label class="field"><span>Address</span><input name="address" autocomplete="street-address"></label>
+      <label class="field"><span>ZIP *</span><input name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?" title="5-digit ZIP code" required></label>
+    </div>
+    <label class="field"><span>What service are you looking for? *</span>
+      <select name="service_type" required>
+        <option value="">Select one</option>
+        <option value="standard">Standard Clean</option>
+        <option value="deep">Deep Clean</option>
+        <option value="move">Move-In / Move-Out</option>
+        <option value="recurring">Recurring cleaning</option>
+        <option value="unsure">Not sure yet</option>
+      </select>
+    </label>
+    <label class="consent"><input name="sms_consent" type="checkbox" value="yes"><span>I agree to receive SMS messages from Umi Cleaning about my quote and booking. Message frequency varies; message and data rates may apply. Reply STOP to opt out at any time.</span></label>
+    <button class="form-submit" type="submit">Request a Quote</button>
+  </form>
+</main>

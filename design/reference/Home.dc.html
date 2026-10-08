@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;display=swap" rel="stylesheet">
+<style>
+:root{--accent:#4a6b4d;--accent-hover:#3d5a40;--accent-tint:#e8efe7;--accent-deep:#35513a;--accent-line:#c8d8c6;--bg:#f5f7f2;--surface:#ffffff;--on-accent:#ffffff;--border:#e2e8dc;--border-2:#d3dbcd;--border-soft:#edf0e9;--ink:#232b22;--ink-2:#485043;--muted:#757d70;--muted-soft:#bdc5b8;--nav-bg:rgba(245,247,242,0.93);--glass:rgba(248,250,245,0.84);--note-fg:#8a6d3b;--note-bg:#fbf3df;}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}a:hover{color:var(--accent-hover)}
+[data-pdx="base"]{background-image:url('uploads/pasted-1789192913930-0.png')}
+[data-pdx="sky"]{background:#ece7dd}
+:root{--hero-halo:none}
+#services,#how-it-works,#pricing,#why-us{scroll-margin-top:88px}
+[data-umi="nav"][data-scrolled="0"] a,[data-umi="nav"][data-scrolled="0"] button{color:#ffffff!important}
+[data-umi="nav"][data-scrolled="0"] a[data-umi="cta"]{color:var(--ink)!important;background:rgba(255,255,255,0.94)!important}
+[data-umi="nav"][data-scrolled="0"] button{background:rgba(255,255,255,0.14)!important;border-color:rgba(255,255,255,0.5)!important}
+[data-umi="nav"][data-scrolled="0"] [data-umi="mark"]{display:none!important}
+[data-umi="nav"][data-scrolled="0"] [data-umi="mark-light"]{display:block!important}
+@media (max-width:760px){[data-pdx="hero"]{min-height:84svh!important;align-items:center!important}
+[data-pdx="herowrap"]{padding:96px 22px 56px!important;justify-content:center!important}
+[data-pdx="herocard"]{justify-items:center!important;text-align:center!important;gap:18px!important;max-width:360px!important}
+[data-pdx="herocard"] [data-pdx="badge"]{justify-self:center!important}
+[data-pdx="herocard"] h1{font-size:36px!important;line-height:1.1!important}
+[data-pdx="herocard"] p{max-width:none!important}
+[data-pdx="hero"] [data-pdx="base"]{background-image:url('uploads/pasted-1791363724893-0.png')!important;background-position:center 40%!important}
+[data-pdx="heronote"],[data-pdx="herolead"]{display:none!important}
+[data-pdx="herocard"]{text-shadow:0 2px 16px rgba(12,19,12,0.65)!important}
+[data-pdx="herocard"] [data-pdx="heroctas"]{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:10px!important;max-width:280px!important;width:100%!important;margin:4px auto 0!important}
+[data-pdx="herocard"] [data-pdx="heroctas"] a{padding:13px 18px!important;min-height:48px!important}
+[data-pdx="herocard"] [data-pdx="badge"]{font-size:11.5px!important;padding:5px 11px!important}
+[data-pdx="herocard"] h1{color:#ffffff!important}
+[data-pdx="herocard"] h1 span{color:#cbdcc7!important}
+[data-pdx="herocard"] p{color:#e9eee6!important}
+[data-pdx="hero"] [data-pdx="scrim2"]{background:radial-gradient(ellipse 90% 60% at 50% 50%,rgba(16,24,17,0.3) 0%,transparent 100%)!important}
+[data-pdx="hero"] [data-pdx="scrim"]{background:linear-gradient(180deg,rgba(16,24,17,0.5) 0%,rgba(16,24,17,0.4) 50%,rgba(16,24,17,0.36) 85%,rgba(16,24,17,0.15) 100%)!important}}
+@media (max-width:760px){[data-pdx="svcgrid"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+[data-pdx="svccard"]{border-radius:16px!important}
+[data-pdx="svccard"]>div:first-child{aspect-ratio:1/1!important}
+[data-pdx="svccard"]>div:last-child{padding:12px 12px 14px!important;gap:5px!important}
+[data-pdx="svccard"] h3{font-size:17px!important;line-height:1.2!important}
+[data-pdx="svccard"] p{display:none!important}
+[data-pdx="svccard"] a{font-size:13px!important;margin-top:2px!important}}
+@media (max-width:760px){[data-pdx="trust"]{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px 12px!important;padding:18px 20px!important;font-size:13.5px!important}
+[data-pdx="longlbl"]{display:none!important}[data-pdx="shortlbl"]{display:inline!important}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<dc-import name="Nav" hint-size="100%,64px"></dc-import>
+
+<section data-screen-label="Hero" data-pdx="hero" style="position:relative;overflow:hidden;min-height:82vh;display:flex;align-items:center">
+  <div aria-hidden="true" data-pdx="sky" style="position:absolute;inset:0;overflow:hidden;pointer-events:none">
+    <div data-pdx="base" style="position:absolute;inset:0;background-size:cover;background-position:center center;background-repeat:no-repeat"></div>
+    <div style="position:absolute;inset:auto 0 0 0;height:56px;background:linear-gradient(to bottom,transparent,var(--bg))"></div>
+    <div data-pdx="scrim2" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(16,24,17,0.5) 0%,rgba(16,24,17,0.4) 22%,rgba(16,24,17,0.2) 40%,transparent 56%)"></div>
+    <div data-pdx="scrim" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(16,24,17,0.68) 0%,rgba(16,24,17,0.52) 40%,rgba(16,24,17,0.26) 62%,rgba(16,24,17,0.08) 82%,transparent 100%)"></div>
+  </div>
+  <div data-pdx="herowrap" style="position:relative;margin:0 auto;max-width:1160px;padding:108px 20px 72px;width:100%;box-sizing:border-box;display:flex;justify-content:flex-start">
+    
+  <div data-pdx="herocard" style="max-width:560px;display:grid;gap:16px;text-shadow:0 2px 16px rgba(12,19,12,0.6)">
+      <span data-pdx="badge" style="justify-self:start;display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:500;padding:7px 14px;border-radius:999px;text-shadow:none"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 3px rgba(74,222,128,0.4);"></span>Now booking in Portland &amp; surrounding metro<br></span>
+      <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(34px,4.6vw,52px);line-height:1.08;letter-spacing:-0.02em;text-wrap:pretty;color:#ffffff">Portland's premium home cleaning, <span style="font-style: italic; color: rgb(203, 220, 199);">book a clean home in minutes.<br></span></h1>
+      <div data-pdx="heroctas" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:2px;max-width:420px">
+        <a href="Book.dc.html" style="background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:500;font-size:16px;padding:14px 26px;border-radius:999px;min-height:50px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;flex:1 1 0;min-width:150px;white-space:nowrap;text-shadow:none;box-shadow:0 8px 24px rgba(53,81,58,0.3)" style-hover="background:var(--accent-hover)">Book a Clean</a>
+        <a href="tel:+15034794668" aria-label="Call or text Umi Cleaning at (503) 479-4668" style="background:rgba(255,255,255,0.14);color:#ffffff;text-decoration:none;font-weight:500;font-size:16px;padding:14px 26px;border-radius:999px;border:1px solid rgba(255,255,255,0.55);min-height:50px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;flex:1 1 0;min-width:150px;white-space:nowrap;text-shadow:none;backdrop-filter:blur(6px)" style-hover="background:rgba(255,255,255,0.24)">Call or text (503) 479-4668</a>
+      </div>
+      <p style="margin:0;font-size:15px;font-weight:500;color:#e9eee6;max-width:330px">Bonded &amp; insured&nbsp; ·&nbsp; Cancel anytime</p>
+      <p data-pdx="herolead" style="margin:0;font-size:16px;line-height:1.5;color:#dfe6da;max-width:340px;text-wrap:pretty">Life's busy enough. We make it easy to get a clean home, fast, with cleaners you can trust, on a schedule that works for you</p>
+    </div></div>
+</section>
+
+<section style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface)">
+  <div data-pdx="trust" style="max-width:1160px;margin:0 auto;padding:18px 20px;display:flex;flex-wrap:wrap;gap:12px 36px;justify-content:center;font-size:14px;color:var(--ink-2)">
+    <span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg>Bonded &amp; insured</span>
+    <span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Same-day availability</span>
+    <span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><circle cx="9" cy="8" r="4"></circle><path d="M2 21c0-3.9 3.1-7 7-7 1.6 0 3 .5 4.2 1.4"></path><path d="M15.5 18l2 2 4-4"></path></svg><span data-pdx="longlbl">Background-checked cleaners</span><span data-pdx="shortlbl" style="display:none">Vetted cleaners</span></span>
+    <span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><rect x="2.5" y="5" width="19" height="14" rx="2"></rect><path d="M2.5 10h19"></path><path d="M6.5 15h4"></path></svg>Pay after the job</span>
+  </div>
+</section>
+
+<section id="why-us" data-screen-label="Why Choose Us" style="max-width:1160px;margin:0 auto;padding:96px 20px;box-sizing:border-box">
+  <div style="max-width:560px;display:grid;gap:12px;margin-bottom:44px">
+    <span style="font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)">WHY CHOOSE US ?</span><h2 style="margin: 0; font-family: 'Source Serif 4',serif; font-weight: 400; font-size: clamp(30px,4vw,44px); line-height: 1.1; letter-spacing: -0.02em; max-width: 586px">we make it easy to get a spotless home with cleaners you can trust<br></h2><p style="margin: 0; font-size: 17px; line-height: 1.5; color: var(--ink-2); max-width: 514px">same day availability, real prices up front, and a cleaner on the way.</p>
+    
+    
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;display:grid;gap:10px;align-content:start">
+      <h3 style="margin:0;font-family:'Source Serif 4',serif;font-weight:500;font-size:clamp(44px,5vw,60px);line-height:1;letter-spacing:-0.03em;color:var(--accent);display:flex;align-items:center;gap:10px">4.9<svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.6l-5.9 3.1 1.2-6.6L2.5 9.5l6.6-.9z"></path></svg></h3>
+      <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-2)">Average rating across all homes cleaned.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;display:grid;gap:10px;align-content:start">
+      <h3 style="margin:0;font-family:'Source Serif 4',serif;font-weight:500;font-size:clamp(44px,5vw,60px);line-height:1;letter-spacing:-0.03em;color:var(--accent);display:flex;align-items:center;gap:10px">100%</h3>
+      <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-2)">Satisfaction guaranteed. Not thrilled with something? Tell us within 24 hours and we'll come back to make it right, free.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;display:grid;gap:10px;align-content:start">
+      <h3 style="margin:0;font-family:'Source Serif 4',serif;font-weight:500;font-size:clamp(44px,5vw,60px);line-height:1;letter-spacing:-0.03em;color:var(--accent);display:flex;align-items:center;gap:10px">2 min</h3>
+      <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-2)">Average time to get booked, from address to confirmed visit.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" data-screen-label="Services" style="background:var(--surface);border-top:1px solid var(--border)">
+  <div style="max-width:1160px;margin:0 auto;padding:96px 20px;box-sizing:border-box">
+    <div style="max-width:560px;display:grid;gap:12px;margin-bottom:44px">
+      <span style="font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)">Services</span>
+      <h2 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-0.02em">Four ways we clean</h2>
+    </div>
+    <div data-pdx="svcgrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
+      <div data-pdx="svccard" style="background:var(--bg);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-content:start">
+        <div style="position:relative;aspect-ratio:1/1;background:var(--border-soft)">
+          <image-slot id="svc-standard" shape="rect" radius="0" src="uploads/pasted-1789192679432-0.png" fit="cover" placeholder="Clean kitchen photo"></image-slot>
+        </div>
+        <div style="padding:22px;display:grid;gap:9px;align-content:start">
+          <h3 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:24px;letter-spacing:-0.01em">Standard cleans</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)">Kitchens, bathrooms, bedrooms and living areas. Book it whenever you need it.</p>
+          <a href="Checklist.dc.html" style="justify-self:start;font-size:14px;font-weight:500;text-decoration:none;margin-top:4px">See what's included →</a>
+        </div>
+      </div>
+      <div data-pdx="svccard" style="background:var(--bg);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-content:start">
+        <div style="position:relative;aspect-ratio:1/1;background:var(--border-soft)">
+          <image-slot id="svc-recurring" shape="rect" radius="0" placeholder="Counter wipe-down photo"></image-slot>
+        </div>
+        <div style="padding:22px;display:grid;gap:9px;align-content:start">
+          <h3 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:24px;letter-spacing:-0.01em">Recurring cleans</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)">Weekly to monthly. The more often you book, the less you pay per visit.</p>
+          <a href="Book.dc.html" style="justify-self:start;font-size:14px;font-weight:500;text-decoration:none;margin-top:4px">Set up recurring cleans →</a>
+        </div>
+      </div>
+      <div data-pdx="svccard" style="background:var(--bg);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-content:start">
+        <div style="position:relative;aspect-ratio:1/1;background:var(--border-soft)">
+          <image-slot id="svc-deep" shape="rect" radius="0" placeholder="Oven scrubbing photo"></image-slot>
+        </div>
+        <div style="padding:22px;display:grid;gap:9px;align-content:start">
+          <h3 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:24px;letter-spacing:-0.01em">Deep cleans</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)">Baseboards, inside appliances and detail work. Ideal for a first visit.</p>
+          <a href="Book.dc.html" style="justify-self:start;font-size:14px;font-weight:500;text-decoration:none;margin-top:4px">Book a deep clean →</a>
+        </div>
+      </div>
+      <div data-pdx="svccard" style="background:var(--bg);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-content:start">
+        <div style="position:relative;aspect-ratio:1/1;background:var(--border-soft)">
+          <image-slot id="svc-move" shape="rect" radius="0" src="uploads/pasted-1789191573759-0.png" fit="cover" placeholder="Empty room photo"></image-slot>
+        </div>
+        <div style="padding:22px;display:grid;gap:9px;align-content:start">
+          <h3 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:24px;letter-spacing:-0.01em">Move-in &amp; move-out cleans</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)">Cabinets, closets and appliances in an empty home. Built for deposits.</p>
+          <a href="Book.dc.html" style="justify-self:start;font-size:14px;font-weight:500;text-decoration:none;margin-top:4px">Book a move clean →</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:32px;display:flex;justify-content:center">
+      <a href="Checklist.dc.html" style="background:var(--surface);color:var(--ink);text-decoration:none;font-weight:500;font-size:16px;padding:14px 26px;border-radius:999px;border:1px solid var(--border-2);min-height:48px;box-sizing:border-box;display:inline-flex;align-items:center;gap:10px" style-hover="border-color:var(--accent);color:var(--accent)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 3.5h6"></path><path d="M9 10l1.5 1.5L13 9"></path><path d="M9 15.5h6"></path></svg>See what's included in each clean</a>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" data-screen-label="How It Works" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div style="max-width:1160px;margin:0 auto;padding:96px 20px;box-sizing:border-box">
+    <div style="max-width:560px;display:grid;gap:12px;margin-bottom:44px">
+      <span style="font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)">How it works</span>
+      <h2 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-0.02em">From booking to done, in four steps</h2>
+    </div>
+    <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:28px 24px">
+      <li style="display:grid;gap:12px;align-content:start;padding-top:20px;border-top:2px solid var(--accent-line)">
+        <span style="font-family:'Source Serif 4',serif;font-size:36px;color:var(--accent);line-height:1">1</span>
+        <h3 style="margin:0;font-size:19px;font-weight:500">Book online in under a minute</h3>
+        <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-2)">Tell us about your home, pick a date and time, and see your instant estimate before you confirm.</p>
+      </li>
+      <li style="display:grid;gap:12px;align-content:start;padding-top:20px;border-top:2px solid var(--accent-line)">
+        <span style="font-family:'Source Serif 4',serif;font-size:36px;color:var(--accent);line-height:1">2</span>
+        <h3 style="margin:0;font-size:19px;font-weight:500">A cleaner is dispatched to your home</h3>
+        <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-2)">We match your booking with an independent cleaning professional in Portland and confirm the visit.</p>
+      </li>
+      <li style="display:grid;gap:12px;align-content:start;padding-top:20px;border-top:2px solid var(--accent-line)">
+        <span style="font-family:'Source Serif 4',serif;font-size:36px;color:var(--accent);line-height:1">3</span>
+        <h3 style="margin:0;font-size:19px;font-weight:500">Pay securely after the job's done</h3>
+        <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-2)">Your card on file is charged once the clean is complete. Final price is confirmed on arrival.</p>
+      </li>
+      <li style="display:grid;gap:12px;align-content:start;padding-top:20px;border-top:2px solid var(--accent-line)">
+        <span style="font-family:'Source Serif 4',serif;font-size:36px;color:var(--accent);line-height:1">4</span>
+        <h3 style="margin:0;font-size:19px;font-weight:500">Set it and forget it</h3>
+        <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-2)">Choose weekly, bi-weekly, every 3 weeks or monthly and your next clean books itself.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<footer style="border-top:1px solid var(--border);background:var(--surface)">
+  <div style="max-width:1160px;margin:0 auto;padding:56px 20px 40px;display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+    <div style="display:grid;gap:16px;align-content:start;max-width:340px">
+      <span style="display:flex;align-items:center;gap:12px;font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-0.02em"><img src="assets/logo/umi-mark.png" alt="" style="height:44px;width:auto;display:block">Umi Cleaning</span>
+      <p style="margin:0;font-size:15px;line-height:1.6;color:var(--muted);text-wrap:pretty">Residential cleaning in Portland, Oregon. Thorough, reliable, and tailored to your home.</p>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <span style="font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-soft)">Company</span>
+      <a href="#services" style="color:var(--ink-2);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Services</a>
+      <a href="#how-it-works" style="color:var(--ink-2);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">How it works</a>
+      <a href="Contact.dc.html" style="color:var(--ink-2);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Contact</a>
+      <a href="Checklist.dc.html" style="color:var(--ink-2);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Cleaning checklist</a>
+      <a href="Careers.dc.html" style="color:var(--ink-2);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Join our team</a>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <span style="font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-soft)">Reach us</span>
+      <a href="tel:5034794668" style="color:var(--ink-2);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">(503) 479-4668</a>
+      <a href="mailto:hello@umicleaning.com" style="color:var(--ink-2);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">hello@umicleaning.com</a>
+      <a href="Contact.dc.html" style="color:var(--ink-2);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Request a quote</a>
+      <span style="font-size:15px;color:var(--ink-2)">Portland, OR</span>
+      <span style="font-size:15px;color:var(--muted)">Mon–Sat · 8 AM – 6 PM</span>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start;justify-items:start">
+      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--accent-tint);color:var(--accent-deep);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent)"></span>Bonded &amp; Insured · Portland, OR</span>
+      <span style="font-size:14px;color:var(--muted);line-height:1.5">© 2026 Umi Cleaning. All rights reserved.</span>
+      <div style="display:flex;flex-wrap:wrap;gap:8px 18px"><a href="Terms.dc.html" style="color:var(--muted);text-decoration:none;font-size:14px" style-hover="color:var(--accent)">Terms of Service</a><a href="Privacy.dc.html" style="color:var(--muted);text-decoration:none;font-size:14px" style-hover="color:var(--accent)">Privacy Policy</a></div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {}
+</script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f5f7f2"/></svg></template>
+</body>
+</html>

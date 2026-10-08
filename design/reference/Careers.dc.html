@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#4a6b4d;--accent-hover:#3d5a40;--accent-tint:#e8efe7;--accent-deep:#35513a;--accent-line:#c8d8c6;--bg:#f5f7f2;--surface:#ffffff;--on-accent:#ffffff;--border:#e2e8dc;--border-2:#d3dbcd;--border-soft:#edf0e9;--ink:#232b22;--ink-2:#485043;--muted:#757d70;--muted-soft:#bdc5b8;--nav-bg:rgba(245,247,242,0.93);--glass:rgba(248,250,245,0.84);--note-fg:#8a6d3b;--note-bg:#fbf3df;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}a:hover{color:var(--accent-hover)}
+</style>
+</helmet>
+<dc-import name="Nav" hint-size="100%,64px"></dc-import>
+<div style="height:64px"></div>
+<main data-screen-label="Careers" style="max-width:1160px;margin:0 auto;padding:48px 20px 80px;box-sizing:border-box">
+  <div style="display:grid;gap:10px;margin-bottom:32px;max-width:640px">
+    <span style="font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)">Join our team</span>
+    <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(32px,4.5vw,46px);line-height:1.05;letter-spacing:-0.02em">Clean with Umi</h1>
+    <p style="margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)">We're looking for reliable, detail-oriented cleaning professionals in the Portland area. Apply below and we'll be in touch.</p>
+  </div>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden">
+    <iframe src="https://app.scheduledrop.com/public/hiring-forms/1062?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3JtX2lkcyI6WzEwNjJdLCJjbGllbnRfaWQiOjk2OSwiaWF0IjoxNzkxMzYyMDEzfQ.Naw4IiQe8kepCTz4Y83okZrqcEjT1EajWH42FELOc54" title="Apply to clean with Umi Cleaning" style="display:block;width:100%;height:max(900px, calc(100vh - 140px));border:none" frameBorder="0" allowFullScreen="{{ true }}"></iframe>
+  </div>
+</main>
+</x-dc>
+</body>
+</html>

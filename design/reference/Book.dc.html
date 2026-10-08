@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#4a6b4d;--accent-hover:#3d5a40;--accent-tint:#e8efe7;--accent-deep:#35513a;--accent-line:#c8d8c6;--bg:#f5f7f2;--surface:#ffffff;--on-accent:#ffffff;--border:#e2e8dc;--border-2:#d3dbcd;--border-soft:#edf0e9;--ink:#232b22;--ink-2:#485043;--muted:#757d70;--muted-soft:#bdc5b8;--nav-bg:rgba(245,247,242,0.93);--glass:rgba(248,250,245,0.84);--note-fg:#8a6d3b;--note-bg:#fbf3df;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}a:hover{color:var(--accent-hover)}
+</style>
+</helmet>
+<dc-import name="Nav" hint-size="100%,64px"></dc-import>
+<div style="height:64px"></div>
+<main data-screen-label="Booking" style="max-width:1160px;margin:0 auto;padding:48px 20px 80px;box-sizing:border-box">
+  <div style="display:grid;gap:10px;margin-bottom:32px;max-width:640px">
+    <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(32px,4.5vw,46px);line-height:1.05;letter-spacing:-0.02em">Book a clean</h1>
+    <p style="margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)">Your estimate updates as you go. The final price is confirmed on arrival, and your card is charged after the job is done.</p>
+  </div>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden">
+    <iframe src="https://app.scheduledrop.com/public/forms/10293?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3JtX2lkcyI6WyIxMDI5MyJdLCJjbGllbnRfaWQiOjk2OSwiaWF0IjoxNzkwMTk5OTA5fQ.2_nVMWoAJxkVwnl99grrKV3ub1G_dfFDaJpjCdOhRYY" title="Book a clean with Umi Cleaning" style="display:block;width:100%;height:max(900px, calc(100vh - 140px));border:none" frameBorder="0" allowFullScreen="{{ true }}"></iframe>
+  </div>
+</main>
+</x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f5f7f2"/></svg></template>
+</body>
+</html>

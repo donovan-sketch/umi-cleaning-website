@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;family=Source+Serif+4:ital,opsz,wght@1,8..60,400&amp;display=swap" rel="stylesheet">
+<style>:root{--accent:#4a6b4d;--accent-hover:#3d5a40;--accent-tint:#e8efe7;--accent-deep:#35513a;--accent-line:#c8d8c6;--bg:#f5f7f2;--surface:#ffffff;--on-accent:#ffffff;--border:#e2e8dc;--border-2:#d3dbcd;--border-soft:#edf0e9;--ink:#232b22;--ink-2:#485043;--muted:#757d70;--muted-soft:#bdc5b8;--nav-bg:rgba(245,247,242,0.93);--glass:rgba(248,250,245,0.84);--note-fg:#8a6d3b;--note-bg:#fbf3df;}
+[data-umi="nav"][data-scrolled="1"]{background:var(--nav-bg)!important;backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+[data-umi="navdesktop"]{display:flex;align-items:center;gap:28px}
+[data-umi="navmobile"]{display:none}
+[data-umi="navpanel"]{display:none}
+@media (max-width:760px){html{scrollbar-width:none}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}}
+@media (max-width:860px){[data-umi="navrow"]{gap:10px!important}[data-umi="navdesktop"]{display:none}[data-umi="navmobile"]{display:flex;gap:8px;align-items:center}[data-umi="navpanel"]{display:grid}}
+</style>
+</helmet>
+<header data-umi="nav" data-scrolled="{{ scrolledAttr }}" style="position:fixed;top:0;left:0;right:0;z-index:50;background:transparent;transition:background 0.2s ease;font-family:Outfit,sans-serif;color:var(--ink)">
+  <div data-umi="navrow" style="max-width:1160px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="Home.dc.html" style="display:flex;align-items:center;gap:10px;font-size:20px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);text-decoration:none;white-space:nowrap"><img data-umi="mark" src="assets/logo/umi-mark.png" alt="" style="height:34px;width:auto;display:block"><img data-umi="mark-light" src="assets/logo/umi-mark-light.png" alt="" style="height:34px;width:auto;display:none"><span style="display:grid;line-height:1"><span>Umi Cleaning</span><span style="font-family:'Source Serif 4',serif;font-style:italic;font-weight:400;font-size:13px;letter-spacing:0.02em;margin-top:3px;opacity:0.8">Portland</span></span></a>
+    <div data-umi="navdesktop">
+      <nav style="display:flex;gap:28px;font-size:15px">
+        <a href="Home.dc.html#services" style="color:var(--ink);text-decoration:none" style-hover="color:var(--accent)">Services</a>
+        <a href="Home.dc.html#how-it-works" style="color:var(--ink);text-decoration:none" style-hover="color:var(--accent)">How It Works</a>
+        <a href="Checklist.dc.html" style="color:var(--ink);text-decoration:none" style-hover="color:var(--accent)">Checklist</a>
+        <a href="Contact.dc.html" style="color:var(--ink);text-decoration:none" style-hover="color:var(--accent)">Contact</a>
+      </nav>
+      <a href="tel:+15034794668" style="color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap" style-hover="color:var(--accent)">503-479-4668</a>
+      <a href="Book.dc.html" data-umi="cta" style="background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:500;font-size:15px;padding:10px 18px;border-radius:999px;white-space:nowrap" style-hover="background:var(--accent-hover)">Book Now</a>
+    </div>
+    <div data-umi="navmobile" style="gap:6px">
+      <a href="tel:+15034794668" data-umi="cta" aria-label="Call Umi Cleaning at (503) 479-4668" style="background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:500;font-size:13px;letter-spacing:-0.01em;padding:9px 12px;border-radius:999px;white-space:nowrap">(503) 479-4668</a>
+      <button onClick="{{ toggle }}" aria-label="{{ menuGlyph }}" style="width:44px;height:44px;padding:0;border:1px solid var(--border-2);border-radius:50%;background:var(--surface);display:grid;place-items:center;cursor:pointer;color:var(--ink)"><span style="position:relative;width:18px;height:14px;display:block"><span style="position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;top:{{ l1Top }};transform:{{ l1Rot }};transition:transform 0.2s ease,top 0.2s ease"></span><span style="position:absolute;left:0;right:0;top:6px;height:2px;border-radius:2px;background:currentColor;opacity:{{ l2Op }};transition:opacity 0.15s ease"></span><span style="position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;top:{{ l3Top }};transform:{{ l3Rot }};transition:transform 0.2s ease,top 0.2s ease"></span></span></button>
+    </div>
+  </div>
+  <sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+    <nav data-umi="navpanel" style="background:var(--bg);border-bottom:1px solid var(--border);padding:8px 20px 16px;gap:2px;font-size:17px">
+      <a href="Home.dc.html#services" onClick="{{ close }}" style="color:var(--ink);text-decoration:none;padding:12px 4px;border-bottom:1px solid var(--border-soft)">Services</a>
+      <a href="Home.dc.html#how-it-works" onClick="{{ close }}" style="color:var(--ink);text-decoration:none;padding:12px 4px;border-bottom:1px solid var(--border-soft)">How It Works</a>
+      <a href="Checklist.dc.html" style="color:var(--ink);text-decoration:none;padding:12px 4px;border-bottom:1px solid var(--border-soft)">Checklist</a>
+      <a href="Contact.dc.html" style="color:var(--ink);text-decoration:none;padding:12px 4px;border-bottom:1px solid var(--border-soft)">Contact</a>
+      <a href="tel:+15034794668" style="color:var(--accent);text-decoration:none;padding:12px 4px;font-weight:500">503-479-4668</a>
+    </nav>
+  </sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: false, scrolled: false };
+  componentDidMount() {
+    document.documentElement.dataset.theme = 'light';
+    this._s = () => {
+      const y = window.scrollY || window.pageYOffset || (document.scrollingElement || document.documentElement).scrollTop || 0;
+      const next = y > 40;
+      if (next !== this.state.scrolled) this.setState({ scrolled: next });
+    };
+    window.addEventListener('scroll', this._s, { passive: true });
+    this._s();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._s); }
+  renderVals() {
+    return {
+      open: this.state.open,
+      scrolledAttr: (this.state.scrolled || this.state.open) ? '1' : '0',
+      menuGlyph: this.state.open ? 'Close menu' : 'Open menu',
+      l1Top: this.state.open ? '6px' : '0px',
+      l3Top: this.state.open ? '6px' : '12px',
+      l1Rot: this.state.open ? 'rotate(45deg)' : 'none',
+      l3Rot: this.state.open ? 'rotate(-45deg)' : 'none',
+      l2Op: this.state.open ? 0 : 1,
+      toggle: () => this.setState(s => ({ open: !s.open })),
+      close: () => this.setState({ open: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

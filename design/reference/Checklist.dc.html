@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#4a6b4d;--accent-hover:#3d5a40;--accent-tint:#e8efe7;--accent-deep:#35513a;--accent-line:#c8d8c6;--bg:#f5f7f2;--surface:#ffffff;--on-accent:#ffffff;--border:#e2e8dc;--border-2:#d3dbcd;--border-soft:#edf0e9;--ink:#232b22;--ink-2:#485043;--muted:#757d70;--muted-soft:#bdc5b8;--nav-bg:rgba(245,247,242,0.93);--glass:rgba(248,250,245,0.84);--note-fg:#8a6d3b;--note-bg:#fbf3df;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}a:hover{color:var(--accent-hover)}
+@media (max-width:760px){main[data-screen-label="Checklist"]{padding:40px 16px 64px!important}[data-ck="row"]{grid-template-columns:minmax(0,1fr) 44px 44px 52px!important;gap:0 4px!important;padding:9px 12px!important;font-size:14px!important;line-height:1.35}[data-ck="room"]{padding:14px 12px!important}}
+</style>
+</helmet>
+<dc-import name="Nav" hint-size="100%,64px"></dc-import>
+<div style="height:64px"></div>
+<main data-screen-label="Checklist" style="max-width:960px;margin:0 auto;padding:64px 20px 96px;box-sizing:border-box">
+  <div style="max-width:600px;display:grid;gap:12px;margin-bottom:36px">
+    <span style="font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)">What's included</span>
+    <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(34px,5vw,52px);line-height:1.05;letter-spacing:-0.02em">The cleaning checklist</h1>
+    <p style="margin:0;font-size:17px;line-height:1.5;color:var(--ink-2)">What's included in each service, by area. Extras can be added at booking.</p>
+  </div>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden">
+    <div data-ck="row" style="display:grid;grid-template-columns:minmax(0,1fr) 72px 72px 72px;gap:0 8px;padding:14px 16px;border-bottom:1px solid var(--border);font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);background:var(--surface)">
+      <span>Area / Result</span><span style="text-align:center">Std</span><span style="text-align:center">Deep</span><span style="text-align:center;line-height:1.2">Move<br>In/Out</span>
+    </div>
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="5">
+      <button type="button" onClick="{{ g.toggle }}" aria-expanded="{{ g.expanded }}" data-ck="room" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px;border:none;border-bottom:1px solid var(--border-soft);background:var(--bg);font-family:Outfit,sans-serif;font-size:15px;font-weight:600;color:var(--accent);text-align:left;cursor:{{ g.cursor }}">
+        <span>{{ g.room }}</span>
+        <span style="display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:var(--muted)"><span>{{ g.count }}</span><span style="display:{{ g.chevDisplay }};transform:{{ g.chevRot }};transition:transform 0.2s ease;font-size:12px;color:var(--accent)">▼</span></span>
+      </button>
+      <sc-if value="{{ g.open }}" hint-placeholder-val="{{ true }}">
+      <sc-for list="{{ g.tasks }}" as="t" hint-placeholder-count="4">
+        <div data-ck="row" style="display:grid;grid-template-columns:minmax(0,1fr) 72px 72px 72px;gap:0 8px;padding:12px 16px;border-bottom:1px solid var(--border-soft);font-size:15px;align-items:center">
+          <span style="text-wrap:pretty">{{ t.name }}</span>
+          <span style="text-align:center;color:{{ t.c0 }};font-size:16px">{{ t.s }}</span>
+          <span style="text-align:center;color:{{ t.c1 }};font-size:16px">{{ t.d }}</span>
+          <span style="text-align:center;color:{{ t.c2 }};font-size:16px">{{ t.m }}</span>
+        </div>
+      </sc-for>
+      </sc-if>
+    </sc-for>
+  </div>
+  <p style="margin:20px 0 0;font-size:14px;color:var(--muted);line-height:1.5">✓ included · — not included</p>
+  <div style="margin:28px 0 0;display:grid;gap:10px;max-width:720px">
+    <h2 style="margin:0;font-size:17px;font-weight:600;color:var(--ink)">Good to know</h2>
+    <ul style="margin:0;padding-left:20px;display:grid;gap:8px;font-size:15px;line-height:1.55;color:var(--ink-2)">
+      <li>Move-In / Move-Out assumes an empty home, so furniture items do not apply.</li>
+      <li>Inside oven and inside cabinets are included in Move-In / Move-Out and are add-ons for Standard and Deep. Inside fridge and microwave are included in Deep and Move-In / Move-Out.</li>
+      <li>Making beds and changing bedding is an add-on, not part of any service.</li>
+      <li>Other add-ons include interior and exterior windows, wet-wiped blinds, laundry and folding, and dishes.</li>
+    </ul>
+  </div>
+  <div style="margin-top:40px;display:flex;flex-wrap:wrap;gap:12px">
+    <a href="Book.dc.html" style="background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:500;font-size:16px;padding:14px 24px;border-radius:999px;min-height:48px;box-sizing:border-box;display:inline-flex;align-items:center" style-hover="background:var(--accent-hover)">Book a Clean</a>
+    <a href="Contact.dc.html" style="background:var(--surface);color:var(--ink);text-decoration:none;font-weight:500;font-size:16px;padding:14px 24px;border-radius:999px;border:1px solid var(--border-2);min-height:48px;box-sizing:border-box;display:inline-flex;align-items:center">Get a quote</a>
+  </div>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { mobile: false, open: { 'Whole home': true } };
+  componentDidMount() {
+    this.mq = window.matchMedia('(max-width:760px)');
+    this.onMq = () => this.setState({ mobile: this.mq.matches });
+    this.onMq();
+    this.mq.addEventListener('change', this.onMq);
+  }
+  componentWillUnmount() { this.mq && this.mq.removeEventListener('change', this.onMq); }
+  renderVals() {
+    // [name, standard, deep, moveInOut] — from Umi_Service_Tiers_Checklist_Simplified.xlsx
+    const data = [
+      ['Whole home', [['Floors vacuumed and mopped (carpet, rugs, hard surfaces)',1,1,1],['Hallways and staircases cleaned',1,1,1],['Trash emptied (liners replaced if provided)',1,1,1],['Ledges and shelves dusted',1,1,1],['Mirrors and glass surfaces wiped',1,1,1],['Light switches and door handles wiped',1,1,1],['Furniture and decor dusted',1,1,0],['Under furniture cleaned',0,1,0],['Baseboards wiped',0,1,1],['Window sills wiped and blinds dusted',0,1,1],['Cobwebs removed; reachable ceiling fans and vents dusted',0,1,1],['Doors and door frames wiped',0,1,1],['Walls spot-cleaned',0,1,1],['Inside closets cleaned',0,0,1]]],
+      ['Kitchen', [['Counters and backsplash wiped',1,1,1],['Sink and faucet cleaned',1,1,1],['Stovetop cleaned',1,1,1],['Appliance exteriors wiped',1,1,1],['Oven (outside)',1,1,0],['Oven (inside & out)',0,0,1],['Fridge (outside)',1,0,0],['Fridge (inside & out)',0,1,1],['Microwave (outside)',1,0,0],['Microwave (inside & out)',0,1,1],['Cabinet and drawer exteriors wiped',0,1,1],['Range hood exterior cleaned',0,1,1],['Small appliances wiped and stainless steel polished',0,1,1],['Top of refrigerator wiped',0,1,1],['Inside cabinets and drawers cleaned',0,0,1]]],
+      ['Bathrooms', [['Toilet cleaned (inside, outside, base)',1,1,1],['Sink, counter, and mirror cleaned',1,1,1],['Shower and tub cleaned',1,1,1],['Cabinet and drawer exteriors wiped',0,1,1],['Soap scum, tile, and grout cleaned',0,1,1],['Shower door, tracks, and chrome cleaned',0,1,1],['Inside cabinets and drawers cleaned',0,0,1]]],
+      ['Laundry room', [['Washer and dryer exteriors wiped; sink and countertop cleaned',1,1,1]]]
+    ];
+    const cell = v => v ? '✓' : '—';
+    const col = v => v ? 'var(--accent)' : 'var(--muted-soft)';
+    return {
+      groups: data.map(([room, tasks]) => {
+        const isOpen = !this.state.mobile || !!this.state.open[room];
+        return {
+        room,
+        count: tasks.length + (tasks.length === 1 ? ' item' : ' items'),
+        open: isOpen,
+        expanded: isOpen ? 'true' : 'false',
+        cursor: this.state.mobile ? 'pointer' : 'default',
+        chevDisplay: this.state.mobile ? 'inline-block' : 'none',
+        chevRot: isOpen ? 'rotate(180deg)' : 'none',
+        toggle: () => { if (this.state.mobile) this.setState(s => ({ open: { ...s.open, [room]: !s.open[room] } })); },
+        tasks: tasks.map(([name, s, d, m]) => ({ name, s: cell(s), d: cell(d), m: cell(m), c0: col(s), c1: col(d), c2: col(m) })) }; })
+    };
+  }
+}
+</script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f5f7f2"/></svg></template>
+</body>
+</html>

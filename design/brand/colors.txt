@@ -1,0 +1,7 @@
+Umi Cleaning brand colors
+
+Blue-grey (house): #2B3A4A
+Deep Sage (leaves): #6B8468
+Light Sage (leaves on dark): #9CAF88
+Off-white background: #F7F8F5
+Secondary text: #4A5D72

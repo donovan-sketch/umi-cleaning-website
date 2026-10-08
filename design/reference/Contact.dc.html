@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#4a6b4d;--accent-hover:#3d5a40;--accent-tint:#e8efe7;--accent-deep:#35513a;--accent-line:#c8d8c6;--bg:#f5f7f2;--surface:#ffffff;--on-accent:#ffffff;--border:#e2e8dc;--border-2:#d3dbcd;--border-soft:#edf0e9;--ink:#232b22;--ink-2:#485043;--muted:#757d70;--muted-soft:#bdc5b8;--nav-bg:rgba(245,247,242,0.93);--glass:rgba(248,250,245,0.84);--note-fg:#8a6d3b;--note-bg:#fbf3df;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}a:hover{color:var(--accent-hover)}
+input,select,textarea{font-family:Outfit,sans-serif;font-size:16px;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+</style>
+</helmet>
+<dc-import name="Nav" hint-size="100%,64px"></dc-import>
+<div style="height:64px"></div>
+<main data-screen-label="Contact" style="max-width:1160px;margin:0 auto;padding:64px 20px 96px;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px;align-items:start">
+  <div style="display:grid;gap:14px;max-width:460px">
+    <span style="font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)">Contact</span>
+    <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(34px,5vw,52px);line-height:1.05;letter-spacing:-0.02em">Get a quote</h1>
+    <p style="margin:0;font-size:17px;line-height:1.5;color:var(--ink-2)">Not ready to book? Send a few details and we'll follow up with an estimate. Ready now? <a href="Book.dc.html" style="font-weight:500">Book online</a> and see your price instantly.</p>
+    <div style="margin-top:20px;display:grid;gap:6px;font-size:15px;color:var(--ink-2);line-height:1.5">
+      <span style="font-weight:500;color:var(--ink)">Umi Cleaning</span>
+      <span>Portland, Oregon service area</span>
+      <span>Bonded &amp; insured · Cancel anytime</span>
+    </div>
+  </div>
+  <form onSubmit="{{ submit }}" style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;display:grid;gap:16px;max-width:560px;width:100%;box-sizing:border-box">
+    <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+      <div style="background:var(--accent-tint);color:var(--accent-deep);border-radius:12px;padding:14px 16px;font-size:15px">Thanks — request received. We'll be in touch shortly. <span style="font-family:ui-monospace,monospace;font-size:11px;opacity:0.8">(placeholder: pending Jobber integration)</span></div>
+    </sc-if>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+      <label style="display:grid;gap:6px;font-size:14px;font-weight:500"><span>Name *</span><input name="name" required="{{ true }}" style="height:46px;border:1px solid var(--border-2);border-radius:10px;padding:0 12px;background:var(--surface);box-sizing:border-box;width:100%"></label>
+      <label style="display:grid;gap:6px;font-size:14px;font-weight:500"><span>Phone *</span><input name="phone" type="tel" required="{{ true }}" style="height:46px;border:1px solid var(--border-2);border-radius:10px;padding:0 12px;background:var(--surface);box-sizing:border-box;width:100%"></label>
+    </div>
+    <label style="display:grid;gap:6px;font-size:14px;font-weight:500"><span>Email *</span><input name="email" type="email" required="{{ true }}" style="height:46px;border:1px solid var(--border-2);border-radius:10px;padding:0 12px;background:var(--surface);box-sizing:border-box;width:100%"></label>
+    <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(100px,1fr);gap:16px">
+      <label style="display:grid;gap:6px;font-size:14px;font-weight:500"><span>Address</span><input name="address" style="height:46px;border:1px solid var(--border-2);border-radius:10px;padding:0 12px;background:var(--surface);box-sizing:border-box;width:100%"></label>
+      <label style="display:grid;gap:6px;font-size:14px;font-weight:500"><span>ZIP *</span><input name="zip" inputMode="numeric" required="{{ true }}" style="height:46px;border:1px solid var(--border-2);border-radius:10px;padding:0 12px;background:var(--surface);box-sizing:border-box;width:100%"></label>
+    </div>
+    <label style="display:grid;gap:6px;font-size:14px;font-weight:500"><span>What service are you looking for? *</span>
+      <select name="service_type" required="{{ true }}" style="height:46px;border:1px solid var(--border-2);border-radius:10px;padding:0 12px;background:var(--surface);box-sizing:border-box;width:100%">
+        <option value="">Select one</option><option value="standard">Standard Clean</option><option value="deep">Deep Clean</option><option value="move">Move-In / Move-Out</option><option value="recurring">Recurring cleaning</option><option value="unsure">Not sure yet</option>
+      </select>
+    </label>
+    <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:var(--ink-2);font-weight:400"><input name="sms_consent" type="checkbox" style="width:18px;height:18px;margin:2px 0 0;accent-color:var(--accent);flex:none"><span>I agree to receive SMS messages from Umi Cleaning about my quote and booking. Message frequency varies; message and data rates may apply. Reply STOP to opt out at any time.</span></label>
+    <button type="submit" style="height:50px;border:0;border-radius:999px;background:var(--accent);color:var(--on-accent);font-size:16px;font-weight:500;cursor:pointer;font-family:Outfit,sans-serif" style-hover="background:var(--accent-hover)">Request a Quote</button>
+  </form>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      submit: e => {
+        e.preventDefault();
+        const payload = Object.fromEntries(new FormData(e.target).entries());
+        // JOBBER INTEGRATION POINT (pending): send payload as a client request / lead via Jobber API.
+        console.log('quote request (pending Jobber integration)', payload);
+        this.setState({ sent: true });
+      }
+    };
+  }
+}
+</script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f5f7f2"/></svg></template>
+</body>
+</html>
