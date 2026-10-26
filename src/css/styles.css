@@ -780,6 +780,21 @@ input, select, textarea, button { font-family: var(--font-sans); }
   color: var(--ink-2);
 }
 
+.good-to-know > p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.addons ul { list-style: none; padding: 0; gap: 0; border-top: 1px solid var(--border); }
+.addons li {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 4px 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.addon-name { font-weight: 500; color: var(--ink); }
+.addon-meta { color: var(--muted); }
+@media (max-width: 760px) {
+  .addons li { grid-template-columns: minmax(0, 1fr); }
+}
+
 .ck-actions { margin-top: 40px; }
 
 @media (max-width: 760px) {
